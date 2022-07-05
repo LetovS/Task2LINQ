@@ -43,9 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comparers\BaseComparer.cs" />
+    <Compile Include="Comparers\ComparerToIntAndInt.cs" />
+    <Compile Include="Comparers\ComparerToStringAndInt.cs" />
+    <Compile Include="GetterData\GetterDataWords.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SolverForTask2Linq.cs" />
+    <Compile Include="Solver.cs" />
+    <Compile Include="Strategy\BasePartAllSolvers.cs" />
+    <Compile Include="Strategy\ITextSolver.cs" />
+    <Compile Include="Strategy\LinqSolver.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

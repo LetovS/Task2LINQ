@@ -21,9 +21,9 @@ namespace Task2LINQ
         /// <summary>
         /// Получение статистики слов в файлах
         /// </summary>
-        public Dictionary<int, int> GetStatisticWords()
+        public Dictionary<int, int> GetStatisticWords(string path)
         {
-            return _solver.GetStatisticWords();
+            return _solver.GetStatisticWords(path);
         }
         /// <summary>
         /// Получение имени файла с макс числом слов.
@@ -38,9 +38,9 @@ namespace Task2LINQ
         /// </summary>
         /// <param name="countWord">Число слов</param>
         /// <returns>Массив слов</returns>
-        public string[] GetWordsFrequency(int countWord)
+        public string[] GetWordsFrequency(string path, int countWord)
         {
-            return _solver.GetWordsFrequency(countWord);
+            return _solver.GetWordsFrequency(path, countWord);
         }
     }
 }

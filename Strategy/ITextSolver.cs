@@ -9,8 +9,8 @@ namespace Task2LINQ.Strategy
     public interface ITextSolver
     {
         string FindLongestWord();
-        string[] GetWordsFrequency(int countWord);
-        Dictionary<int, int> GetStatisticWords();
+        string[] GetWordsFrequency(string path, int countWord);
+        Dictionary<int, int> GetStatisticWords(string path);
         string GetUniqueFileName(string path);
     }
 }

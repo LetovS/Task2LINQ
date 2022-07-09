@@ -9,6 +9,7 @@ namespace Task2LINQ.Strategy
     public abstract class BasePartAllSolvers
     {
         protected abstract List<string[]> _data { get; set; }
+        protected static readonly string[] seporators = { " ", ".", ",", "!", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "/", "[", "]", ":", ";", "\"", "\r", "\n", "\t", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "|" };
         public enum TypeTask
         {
             /// <summary>

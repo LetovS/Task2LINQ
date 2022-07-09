@@ -53,6 +53,8 @@
     <Compile Include="Strategy\BasePartAllSolvers.cs" />
     <Compile Include="Strategy\ITextSolver.cs" />
     <Compile Include="Strategy\LinqSolver.cs" />
+    <Compile Include="Strategy\ParallelLinqSolver.cs" />
+    <Compile Include="Strategy\SequentialSolver.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

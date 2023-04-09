@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,24 @@ namespace Task2LINQ
         {
             
             Console.WriteLine("Введите путь: ");
-            string path = @"..\..\Data\Chesterton"; //Console.ReadLine();
+            var userPath = Console.ReadLine();
+            string path = @"..\..\Data\Chesterton";
+
+            if (Directory.Exists(userPath))
+            {
+                
+                path = userPath;
+            }
+            else
+            {
+                Console.WriteLine("Проблемы в указанном пути");
+                var str = Environment.CurrentDirectory;
+                Console.WriteLine($"Используется путь по умолчанию {str.Substring(0, str.Length - 9)}Data\\Chesterton");
+            }
+
+            
+
+            
             var data = GetterDataWords.GetWords(path);
 
             ITextSolver obj = new LinqSolver(data);
@@ -96,10 +114,8 @@ namespace Task2LINQ
                 Console.WriteLine($"LINQ {res2}");
                 Console.WriteLine($"Последовательный {res3}");
             }
-            
-            
+            Console.WriteLine("Конец работы");
+            Console.ReadLine();
         }
     }
-
-    
 }

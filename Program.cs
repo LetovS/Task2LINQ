@@ -15,25 +15,18 @@ namespace Task2LINQ
         static void Main(string[] args)
         {
             
-            Console.WriteLine("Введите путь: ");
+            Console.WriteLine("Введите путь к папке с текстовыми файлами в формате .txt: ");
             var userPath = Console.ReadLine();
             string path = @"..\..\Data\Chesterton";
 
             if (Directory.Exists(userPath))
-            {
-                
                 path = userPath;
-            }
             else
             {
                 Console.WriteLine("Проблемы в указанном пути");
                 var str = Environment.CurrentDirectory;
                 Console.WriteLine($"Используется путь по умолчанию {str.Substring(0, str.Length - 9)}Data\\Chesterton");
             }
-
-            
-
-            
             var data = GetterDataWords.GetWords(path);
 
             ITextSolver obj = new LinqSolver(data);
@@ -70,8 +63,6 @@ namespace Task2LINQ
                 }
                 Console.WriteLine("\n4) Имя файла с большим числом уникальных слов: " + obj.GetUniqueFileName(path));
 
-
-
                 Console.WriteLine("\n\nParallel LINQ");
                 obj = new ParallelLinqSolver(data);
                 Console.WriteLine("1) Самое длинное слово " + obj.FindLongestWord());
@@ -85,6 +76,7 @@ namespace Task2LINQ
                 {
                     Console.Write(item + " ");
                 }
+                Console.WriteLine();
             }
             else
             {
@@ -108,7 +100,6 @@ namespace Task2LINQ
                 statistic = obj.GetWordsFrequency(path, 10);
                 sw.Stop();
                 var res3 = sw.ElapsedMilliseconds;
-
 
                 Console.WriteLine($"Parallel Linq {res1}");
                 Console.WriteLine($"LINQ {res2}");

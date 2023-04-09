@@ -15,7 +15,7 @@ namespace Task2LINQ
         {
             
             Console.WriteLine("Введите путь: ");
-            string path = @"Data\"; //Console.ReadLine();
+            string path = @"..\..\Data\Chesterton"; //Console.ReadLine();
             var data = GetterDataWords.GetWords(path);
 
             ITextSolver obj = new LinqSolver(data);
